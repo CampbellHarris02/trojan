@@ -1,14 +1,65 @@
-# trojan
+# trojan 🐴 
 
-Can automation help you?
+> *Can automation help you?*
 
-I'm focused on removing repetetive tasks done by people. 
+I'm on a mission to eliminate repetitive digital tasks — the kind that drain human time, focus, and creativity.
 
-From my student internships over the past 4 summers, I have had lots of first hand experience in repetitive and tedious tasks. I was successful in automating a large portion of my assigned duties so much so that a full days worth of work at the beguinning of one summer was just about 10 minutes of work by the end of the summer by utilizing long python pipelines. Furthermore with the advancement of AI there are so many opportunities for AI to step in and complete these tasks for us. I am an AI optimist, and am saddened by the number of people spending their days staring at a computer screen to complete the tasks that could be done by an automated system. I found one magical python library called <code>self-operating-computer</code> (https://github.com/OthersideAI/self-operating-computer) that feels like a ghost is operating your computer right before your eyes. 
+---
 
-If the technology exists to complete almost all back-office tasks already, why are there still millions of people working these tasks today?
-What is the friction that prevents full adoption?
+### Why?
 
-I believe it has to do with fully understanding the task at hand. In my experience, I had to do the tasks over and over again until I understood how to automate it.
+Over the past four summers as a student intern, I experienced first-hand how tedious, manual processes can be. In each role, I managed to automate huge parts of my job. In one case, what started as a **full day of work** became just **10 minutes** by the end of the summer — thanks to Python pipelines I built from scratch.
 
-This python project aims to study my own behavior on my computer. It will act as a Trojan Horse, infultrating behind the lines of the computer and begin monitoring my screen activity, keystrokes and mouse clicks to discover repetitive behaviour. The end goal is to study the data and automatically plan these automation processes.
+With the rise of AI, the opportunity to automate even more of these tasks is massive.
+
+But here’s the strange thing:
+
+> **If the technology exists to automate almost all back-office work...  
+> why are millions of people still doing it manually?**
+
+---
+
+### My Theory
+
+The friction isn’t technical — it’s cognitive.
+
+You can’t automate what you don’t understand.  
+In my case, I had to do the tasks over and over again to spot the patterns and figure out how to automate them.
+
+---
+
+### This Project
+
+**Trojan** is an experimental Python tool that acts like a friendly little ghost living inside your computer.
+
+It will:
+
+- Monitor mouse clicks  
+- Track keystrokes  
+- Observe screen activity  
+
+All of this runs **quietly in the background**, learning how I work — so it can detect **repetitive behavior** and help design automations.
+
+Think of it as a **Trojan Horse for productivity**: infiltrating the system not to cause harm, but to discover where our time is slipping away — and give it back to us.
+
+---
+
+### Inspired By
+
+One magical library that blew my mind was [`self-operating-computer`](https://github.com/OthersideAI/self-operating-computer) — it’s like watching a ghost operate your machine right before your eyes. That’s the level of magic I want this project to reach.
+
+---
+
+### Goals
+
+- Build a passive logging engine
+- Analyze user behavior over time
+- Automatically identify tasks that could be automated
+- Prototype automation plans using AI/LLMs
+
+---
+
+Let’s teach our computers to *watch*, *learn*, and *help*.  
+No more robots that wait for commands — let’s make them **think**.
+
+---
