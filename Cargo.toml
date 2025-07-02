@@ -1,0 +1,29 @@
+[package]
+name = "trojan"
+version = "0.1.0"
+edition = "2024"
+
+
+
+[dependencies]
+# Error handling
+anyhow = "1.0"
+rusqlite = "0.29" # Or a newer compatible version
+chrono = "0.4"    # Or a newer compatible version
+rdev = "0.4"      # Or the specific version you are using
+screenshots = "0.8" # Or the specific version you are using
+ort = { version = "1.16.0", features = ["load-dynamic", "download-binaries"] }
+image = "0.24"    # Ensure compatible version for image processing
+ndarray = "0.15"  # Ensure compatible version for array operations
+bytemuck = "1.13" # Ensure compatible version
+winit = "0.29"  
+lazy_static = "1.4"
+
+[target.'cfg(target_os = "macos")'.dependencies]
+# macOS specific dependencies if needed
+
+[target.'cfg(target_os = "windows")'.dependencies]
+# Windows specific dependencies if needed
+
+[target.'cfg(target_os = "linux")'.dependencies]
+# Linux specific dependencies if needed
