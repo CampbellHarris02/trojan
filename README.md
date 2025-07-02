@@ -9,6 +9,6 @@ From my student internships over the past 4 summers, I have had lots of first ha
 If the technology exists to complete almost all back-office tasks already, why are there still millions of people working these tasks today?
 What is the friction that prevents full adoption?
 
-I believe it has to do with fully understanding the task at hand. In my experience, I had to do the tasks over and over again until I understood that it could be automated.
+I believe it has to do with fully understanding the task at hand. In my experience, I had to do the tasks over and over again until I understood how to automate it.
 
 This python project aims to study my own behavior on my computer. It will act as a Trojan Horse, infultrating behind the lines of the computer and begin monitoring my screen activity, keystrokes and mouse clicks to discover repetitive behaviour. The end goal is to study the data and automatically plan these automation processes.
