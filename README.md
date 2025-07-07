@@ -59,7 +59,22 @@ One magical library that blew my mind was [`self-operating-computer`](https://gi
 
 ---
 
-Let’s teach our computers to *watch*, *learn*, and *help*.  
-No more robots that wait for commands — let’s make them **think**.
+## ⚙️ Setup Instructions
 
----
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/CampbellHarris02/trojan.git
+cd trojan
+```
+
+### 2. Create a virtual environment
+```bash
+python3 -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+```
+
+### 3. Install dependencies
+```bash
+pip install -r requirements.txt
+```

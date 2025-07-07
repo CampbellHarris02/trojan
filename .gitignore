@@ -144,7 +144,5 @@ vite.config.ts.timestamp-*
 .venv
 .venv/
 
-python/.venv
-python/.venv/
 
-python/tiny_clip/model.onnx
+tiny_clip/model.onnx
