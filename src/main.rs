@@ -15,7 +15,7 @@ type Result<T> = std::result::Result<T, Box<dyn Error>>;
 
 use std::time::{Duration, SystemTime};
 use image::{imageops, DynamicImage, ImageOutputFormat::Jpeg, RgbImage};
-use ndarray::{Array4, ArrayD, CowArray};
+use ndarray::{Array4, Array2, ArrayD, CowArray};
 use ort::{Environment, Session, SessionBuilder, Value};
 use chrono::Utc;
 use rusqlite;
@@ -212,34 +212,38 @@ fn jpeg_thumb(w: u32, h: u32, rgb: &[u8]) -> Result<Vec<u8>> {
 
 // embed ---------------------------------------------------------------------
 fn embed(session: &Arc<Session>, jpeg: &[u8]) -> Result<Vec<f32>> {
-        // Decode and force-resize to 224 × 224 **exactly**
+    // --- build 224×224 image array -------------------------------------------------
     let rgb = image::load_from_memory(jpeg)?
         .resize_exact(224, 224, imageops::FilterType::Triangle)
         .to_rgb8();
-    // Convert to owned dynamic array
-    let arr_owned: ArrayD<f32> =
-        Array4::<f32>::from_shape_fn((1, 3, 224, 224), |(_, c, y, x)| {
-            rgb.get_pixel(x as u32, y as u32)[c] as f32 / 127.5 - 1.0
-        })
-        .into_dyn();
 
-    // Convert owned array to CowArray to match ort's expected type
-    let arr_cow: CowArray<'_, f32, _> = CowArray::from(arr_owned);
+    let img_arr: ArrayD<f32> = Array4::<f32>::from_shape_fn(
+        (1, 3, 224, 224),
+        |(_, c, y, x)| rgb.get_pixel(x as u32, y as u32)[c] as f32 / 127.5 - 1.0,
+    )
+    .into_dyn();
+
+    // Create all CowArrays first - using f32 instead of i64
+    let ids = Array2::<f32>::zeros((1, 77)).into_dyn().into_owned();  // Changed to f32
+    let ids_cow = CowArray::from(ids);
     
-    // Get the raw allocator pointer from the session directly
-    let ort_allocator_ptr = session.allocator(); 
-    let input_tensor = Value::from_array(ort_allocator_ptr, &arr_cow)?; 
-    let outputs = session.run(vec![input_tensor])?;
+    let mask = Array2::<f32>::ones((1, 77)).into_dyn().into_owned();  // Changed to f32
+    let mask_cow = CowArray::from(mask);
     
-    let output = &outputs[0];
-    // First, extract the OrtOwnedTensor
-    let output_owned_tensor = output.try_extract::<f32>()?;
-    
-    // Get an explicit ArrayView from the OrtOwnedTensor using .view()
-    let arr_view = output_owned_tensor.view();
-    
-    // Then use iter().copied().collect() on the ArrayView
-    Ok(arr_view.iter().copied().collect())
+    let img_cow = CowArray::from(img_arr);
+
+    // Now create tensors
+    let ids_tensor = Value::from_array(session.allocator(), &ids_cow)?;
+    let mask_tensor = Value::from_array(session.allocator(), &mask_cow)?;
+    let img_tensor = Value::from_array(session.allocator(), &img_cow)?;
+
+    // Run the session
+    let outputs = session.run(vec![ids_tensor, mask_tensor, img_tensor])?;
+    let out = outputs[0].try_extract::<f32>()?;
+
+    // Collect into owned Vec
+    let embedding: Vec<f32> = out.view().iter().copied().collect();
+    Ok(embedding)
 }
 
 fn blob(v: &[f32]) -> Vec<u8> { 

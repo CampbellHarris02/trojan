@@ -68,3 +68,4 @@ with mouse.Listener(on_click=on_click) as listener:
     listener.join()
 
 print("Mouse listener stopped.")
+

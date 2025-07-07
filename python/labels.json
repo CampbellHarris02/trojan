@@ -1,0 +1,323 @@
+{
+  "apps": [
+    "browser",
+    "email_client",
+    "messaging_app",
+    "video_conference",
+    "social_media",
+    "code_editor",
+    "ide",
+    "terminal",
+    "text_editor",
+    "spreadsheet_editor",
+    "presentation_tool",
+    "note_taking_app",
+    "task_manager",
+    "issue_tracker",
+    "api_testing_tool",
+    "media_player",
+    "music_player",
+    "design_tool",
+    "image_editor",
+    "vector_graphics_editor",
+    "cad_software",
+    "3d_modeling_tool",
+    "citation_manager",
+    "system_settings",
+    "calendar_app",
+    "latex_editor",
+    "unknown_app"
+  ],
+
+  "actions": [
+    "writing_email", "reading_email", "chatting", "commenting", "browse_feed",
+    "searching", "reading_article", "reading_comments", "scrolling_social",
+    "watching_video", "listening_music", "coding", "writing_script", "jupiter_notebook",
+    "running_command", "debugging", "testing_api", "designing_ui",
+    "designing_blueprint", "editing_image", "creating_vector_graphics",
+    "prototyping_ui", "drawing_architecture", "modeling_3d_object",
+    "layout_design", "writing_note", "taking_notes", "organizing_notes",
+    "collaborative_editing", "editing_spreadsheet", "analyzing_data",
+    "writing_report", "writing_essay", "reading_assignment",
+    "tracking_issues", "committing_code", "managing_citations",
+    "organizing_sources", "filling_form", "changing_settings",
+    "scheduling_event", "creating_poster", "digital_painting",
+    "making_social_post", "Browse", "unknown_action"
+  ],
+
+  "categories": [
+    "Communication & Collaboration",
+    "Productivity & Development",
+    "Creative & Design",
+    "Research & Information Gathering",
+    "Administrative & Utility",
+    "Personal & Non-Work Related",
+    "Uncategorized"
+  ],
+
+  "action_priors": {
+    "browser": {
+      "searching":         1.40,
+      "Browse":          1.30,
+      "reading_article":   1.20,
+      "Browse_feed":     0.90,  
+      "watching_video":    0.80,  
+      "scrolling_social":  0.70  
+    },
+
+    "email_client": {
+      "writing_email": 1.40,
+      "reading_email": 1.30,
+      "organizing_notes": 1.05,
+      "searching": 1.05
+    },
+
+    "messaging_app": {
+      "chatting":    1.50, 
+      "commenting":  1.20,
+      "sharing_content": 1.10
+    },
+
+    "video_conference": {
+      "chatting":        1.20,
+      "watching_video":  1.10,
+      "presenting": 1.15
+    },
+
+    "social_media": {
+      "scrolling_social": 1.40,
+      "making_social_post": 1.30,
+      "commenting":       1.25,
+      "Browse_feed":    1.15,
+      "reading_comments": 1.10
+    },
+
+    "code_editor": {
+      "coding":          1.50,
+      "debugging":       1.30,
+      "writing_script":  1.25,
+      "jupiter_notebook":1.20,
+      "refactoring_code": 1.10
+    },
+
+    "ide": {
+      "coding":         1.50,
+      "debugging":      1.40,
+      "testing_api":    1.20,
+      "committing_code":1.20,
+      "running_command": 1.10,
+      "version_control": 1.10
+    },
+
+    "terminal": {
+      "running_command": 1.50,
+      "debugging":       1.25,
+      "writing_script":  1.10
+    },
+
+    "text_editor": {
+      "writing_note":   1.30,
+      "writing_report": 1.25,
+      "writing_essay":  1.20,
+      "editing_text": 1.10
+    },
+
+    "spreadsheet_editor": {
+      "editing_spreadsheet": 1.40,
+      "analyzing_data":      1.30,
+      "creating_charts": 1.15
+    },
+
+    "presentation_tool": {
+      "layout_design": 1.40,
+      "writing_note":  1.10,
+      "creating_content": 1.30
+    },
+
+    "note_taking_app": {
+      "taking_notes":   1.40,
+      "organizing_notes":1.30,
+      "writing_note":   1.25,
+      "searching": 1.10
+    },
+
+    "task_manager": {
+      "tracking_issues": 1.45,
+      "organizing_tasks": 1.40, 
+      "creating_tasks": 1.30,
+      "commenting": 1.10
+    },
+
+    "issue_tracker": {
+      "tracking_issues": 1.50,
+      "commenting":      1.25,
+      "updating_status": 1.20
+    },
+
+    "api_testing_tool": {
+      "testing_api": 1.50,
+      "debugging": 1.20
+    },
+
+    "media_player": {
+      "watching_video": 1.50,
+      "managing_media": 1.10
+    },
+
+    "music_player": {
+      "listening_music": 1.50,
+      "managing_playlists": 1.10
+    },
+
+    "design_tool": {
+      "designing_ui":     1.50,
+      "prototyping_ui":   1.40,
+      "layout_design":    1.30,
+      "creating_graphics": 1.20
+    },
+
+    "image_editor": {
+      "editing_image":        1.50,
+      "digital_painting":     1.30,
+      "creating_poster":      1.20,
+      "retouching": 1.15
+    },
+
+    "vector_graphics_editor": {
+      "creating_vector_graphics": 1.50,
+      "designing_blueprint":      1.20,
+      "illustrating": 1.25
+    },
+
+    "cad_software": {
+      "drawing_architecture": 1.45,
+      "designing_blueprint":  1.40,
+      "modeling_3d_object":   1.35
+    },
+
+    "3d_modeling_tool": {
+      "modeling_3d_object": 1.50,
+      "designing_blueprint":1.25,
+      "rendering": 1.10
+    },
+
+    "citation_manager": {
+      "managing_citations": 1.50,
+      "organizing_sources": 1.40,
+      "importing_citations": 1.20
+    },
+
+    "system_settings": {
+      "changing_settings": 1.50,
+      "configuring": 1.20
+    },
+
+    "calendar_app": {
+      "scheduling_event": 1.50,
+      "viewing_schedule": 1.20,
+      "responding_to_invites": 1.10
+    },
+
+    "latex_editor": {
+      "writing_report": 1.30,
+      "writing_essay":  1.25,
+      "writing_note":   1.20,
+      "typesetting": 1.15
+    },
+
+    "unknown_app": {}
+  },
+  "text_labels": {
+    "typing_intensity": [
+      "idle_typing",
+      "minimal_typing",
+      "short_burst_typing",
+      "moderate_typing",
+      "sustained_typing",
+      "heavy_typing_session"
+    ],
+    "composition_style": [
+      "quick_reply",
+      "bullet_points",
+      "structured_markup",
+      "code_snippet",
+      "data_format_entry",
+      "command_entry",
+      "query_entry",
+      "emoji_use",
+      "url_entry",
+      "narrative_prose"
+    ],
+    "content_context": [
+      "communication_content",
+      "meeting_notes",
+      "research_notes",
+      "technical_documentation",
+      "academic_writing",
+      "blog_post",
+      "social_media_content",
+      "issue_description",
+      "code_comment",
+      "version_control_message",
+      "api_request_data",
+      "configuration_edit",
+      "form_data_entry",
+      "search_query"
+    ],
+    "editing_behavior": [
+      "frequent_corrections",
+      "precise_edits",
+      "block_operations",
+      "refactoring_edits",
+      "search_and_replace",
+      "undo_redo_cycles"
+    ],
+    "task_intent": [
+      "creating_task",
+      "data_entry",
+      "authentication_input",
+      "command_execution",
+      "debugging_input",
+      "problem_description",
+      "navigational_input"
+    ],
+    "structural_elements": [
+      "list_creation",
+      "table_interaction",
+      "data_structure_entry",
+      "equation_entry",
+      "citation_management",
+      "footnote_entry",
+      "document_formatting"
+    ],
+    "language_characteristics": [
+      "formal_tone",
+      "informal_tone",
+      "question_asked",
+      "affirmation_expressed",
+      "sentiment_positive",
+      "sentiment_negative",
+      "sentiment_neutral",
+      "request_made",
+      "feedback_provided"
+    ],
+    "interaction_patterns": [
+      "tab_completion_use",
+      "keyboard_navigation",
+      "multi_cursor_use",
+      "selection_manipulation",
+      "shortcut_key_use",
+      "clipboard_operations",
+      "application_switching"
+    ],
+    "miscellaneous_input": [
+      "file_path_entry",
+      "date_time_entry",
+      "numerical_input",
+      "special_character_input",
+      "unknown_input_pattern",
+      "empty",
+      "none"
+    ]
+  }
+}
