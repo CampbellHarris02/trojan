@@ -147,6 +147,9 @@ vite.config.ts.timestamp-*
 .venv
 .venv/
 
+python/.venv
+python/.venv/
+
 # Added by cargo
 #
 # already existing elements were commented out
