@@ -78,3 +78,25 @@ source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 ```bash
 pip install -r requirements.txt
 ```
+
+## ⚠️ ONNX Model Not Included
+
+This project requires a separate download of the ONNX model used for embedding.
+
+> GitHub doesn’t allow files larger than 100MB, so `python/tiny_clip/model.onnx` has been excluded.
+
+### ⬇️ Download Model:
+
+#### 📥 Auto-download the model
+
+You can download the ONNX model automatically with:
+
+```bash
+python download_model.py
+```
+
+#### Or Manual download the model and place it at:
+
+```bash
+python/tiny_clip/model.onnx
+```
