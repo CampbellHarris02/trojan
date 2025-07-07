@@ -83,13 +83,13 @@ pip install -r requirements.txt
 
 This project requires a separate download of the ONNX model used for embedding.
 
-> GitHub doesn’t allow files larger than 100MB, so `python/tiny_clip/model.onnx` has been excluded.
+> GitHub doesn’t allow files larger than 100MB, so `models/tiny_clip/model.onnx` has been excluded.
 
-### ⬇️ Download <code>tiny_clip</code> Model:
+### ⬇️ Download `tiny_clip` Model:
 
 <url>"https://huggingface.co/valhalla/clip-vit-base-patch32-onnx/resolve/main/model.onnx"</url>
 
-place the downloaded model in the models folder:
+then place it in the `models` folder:
 
 ```bash
 models/tiny_clip/model.onnx
