@@ -141,17 +141,10 @@ vite.config.ts.timestamp-*
 
 # Added by cargo
 
-/target
-
-
 .venv
 .venv/
 
 python/.venv
 python/.venv/
 
-# Added by cargo
-#
-# already existing elements were commented out
-
-#/target
+python/tiny_clip/model.onnx
