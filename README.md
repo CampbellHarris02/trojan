@@ -85,18 +85,12 @@ This project requires a separate download of the ONNX model used for embedding.
 
 > GitHub doesn’t allow files larger than 100MB, so `python/tiny_clip/model.onnx` has been excluded.
 
-### ⬇️ Download Model:
+### ⬇️ Download <code>tiny_clip</code> Model:
 
-#### 📥 Auto-download the model
+<url>"https://huggingface.co/valhalla/clip-vit-base-patch32-onnx/resolve/main/model.onnx"</url>
 
-You can download the ONNX model automatically with:
-
-```bash
-python download_model.py
-```
-
-#### Or Manual download the model and place it at:
+place the downloaded model in the models folder:
 
 ```bash
-python/tiny_clip/model.onnx
+models/tiny_clip/model.onnx
 ```

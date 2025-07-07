@@ -1,13 +1,12 @@
 # download_model.py
 
-import os
 import requests
 from pathlib import Path
 from tqdm import tqdm
 
-# === Configuration ===
-DOWNLOAD_URL = "https://your-link.com/model.onnx"  # 🔁 Replace with actual URL
-TARGET_PATH = Path("tiny_clip/model.onnx")
+# === PUBLIC CLIP ONNX MODEL ===
+DOWNLOAD_URL = "https://huggingface.co/valhalla/clip-vit-base-patch32-onnx/resolve/main/model.onnx"
+TARGET_PATH = Path("models/tiny_clip/model.onnx")
 
 def download_file(url: str, dest: Path):
     dest.parent.mkdir(parents=True, exist_ok=True)
@@ -33,4 +32,4 @@ if __name__ == "__main__":
     else:
         print(f"🚀 Starting download from {DOWNLOAD_URL}")
         download_file(DOWNLOAD_URL, TARGET_PATH)
-        print("✅ Done!")
+        print(f"✅ Done! Saved to {TARGET_PATH}")
