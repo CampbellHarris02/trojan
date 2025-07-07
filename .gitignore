@@ -145,4 +145,4 @@ vite.config.ts.timestamp-*
 .venv/
 
 
-tiny_clip/model.onnx
+models/tiny_clip/model.onnx
